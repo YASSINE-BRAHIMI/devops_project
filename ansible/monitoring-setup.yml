@@ -1,0 +1,27 @@
+---
+- name: Installer Prometheus et Grafana sur K3s
+  hosts: master
+  become: yes
+  tasks:
+    - name: Créer le namespace monitoring
+      kubernetes.core.k8s:
+        name: monitoring
+        kind: Namespace
+        state: present
+
+    - name: Ajouter le repo Helm Prometheus
+      shell: |
+        curl https://raw.githubusercontent.com/helm/helm/main/scripts/get-helm-3 | bash
+        helm repo add prometheus-community https://prometheus-community.github.io/helm-charts
+        helm repo update
+      args:
+        creates: /usr/local/bin/helm
+
+    - name: Installer le Stack Prometheus (inclut Grafana)
+      shell: |
+        helm install prometheus prometheus-community/kube-prometheus-stack \
+          --namespace monitoring \
+          --set grafana.service.type=NodePort \
+          --set grafana.service.nodePort=30002
+      args:
+        creates: /var/lib/rancher/k3s/server/manifests/prometheus.yaml # Marker to avoid re-run if possible

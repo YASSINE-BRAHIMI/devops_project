@@ -1,0 +1,22 @@
+# Credentials and Keys
+cles
+*.pem
+ansible/k3s_token.txt
+ansible/k3s_kubeconfig
+
+# Terraform
+.terraform/
+*.tfstate
+*.tfstate.backup
+.terraform.lock.hcl
+
+# Python
+__pycache__/
+*.py[cod]
+*$py.class
+venv/
+.env
+
+# OS files
+.DS_Store
+Thumbs.db

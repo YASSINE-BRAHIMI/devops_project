@@ -1,0 +1,46 @@
+---
+- name: Installer Docker et préparatifs
+  hosts: k3s_cluster
+  become: yes
+  tasks:
+    - name: Mise à jour du cache apt
+      apt:
+        update_cache: yes
+        cache_valid_time: 3600
+
+    - name: Installation des paquets requis
+      apt:
+        name:
+          - apt-transport-https
+          - ca-certificates
+          - curl
+          - software-properties-common
+        state: present
+
+    - name: Ajout de la clé GPG officielle Docker
+      apt_key:
+        url: https://download.docker.com/linux/ubuntu/gpg
+        state: present
+
+    - name: Configuration du repository Docker
+      apt_repository:
+        repo: deb [arch=amd64] https://download.docker.com/linux/ubuntu jammy stable
+        state: present
+
+    - name: Installation de Docker CE
+      apt:
+        name: docker-ce
+        state: present
+        update_cache: yes
+
+    - name: Démarrage et activation du service Docker
+      systemd:
+        name: docker
+        state: started
+        enabled: yes
+
+    - name: Ajouter l'utilisateur ubuntu au groupe docker
+      user:
+        name: ubuntu
+        groups: docker
+        append: yes
