@@ -27,7 +27,7 @@ jobs:
       with:
         context: ./app
         push: true
-        tags: yassinebrahimi/devops-flask-app:latest
+        tags: yassinebrahimi/lms-flask-app:latest
 
   deploy-to-k3s:
     needs: build-and-push

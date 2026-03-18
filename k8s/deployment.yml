@@ -16,9 +16,9 @@ spec:
     spec:
       containers:
       - name: flask-container
-        image: yassinebrahimi/devops-flask-app:latest # Should be updated by CI/CD
+        image: yassinebrahimi/lms-flask-app:latest # Should be updated by CI/CD
         ports:
-        - containerPort: 5000
+        - containerPort: 8000
         env:
         - name: PORT
-          value: "5000"
+          value: "8000"

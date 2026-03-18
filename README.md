@@ -17,7 +17,7 @@ Ce projet a pour but de mettre en place une infrastructure DevOps complète, aut
 L'architecture repose sur un environnement multi-tiers :
 - **Infrastructure (AWS)**: VPC, Subnets publics, 2 instances EC2 (Master & Worker).
 - **Automation**: Terraform pour le provisioning, Ansible pour l'installation logicielle.
-- **Application**: API Flask Dockerisée.
+- **Application**: Library Management System (Flask + SQLite).
 - **Pipeline**: GitHub Actions déclenché par git push.
 
 *(Note: Utilisez le fichier `architecture.md` pour générer votre diagramme Draw.io)*
