@@ -49,6 +49,6 @@ jobs:
       run: |
         echo "$KUBECONFIG" > kubeconfig.yaml
         export KUBECONFIG=kubeconfig.yaml
-        kubectl apply -f k8s/deployment.yml
-        kubectl apply -f k8s/service.yml
-        kubectl rollout restart deployment/flask-app
+        kubectl apply -f k8s/deployment.yml --insecure-skip-tls-verify
+        kubectl apply -f k8s/service.yml --insecure-skip-tls-verify
+        kubectl rollout restart deployment/flask-app --insecure-skip-tls-verify
