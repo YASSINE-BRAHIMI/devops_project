@@ -20,3 +20,16 @@ venv/
 # OS files
 .DS_Store
 Thumbs.db
+
+# K3s and Tokens
+k3s_kubeconfig.yaml
+k3s_kubeconfig_remote.yaml
+node_token.txt
+
+# Terraform JSON
+terraform/*.json
+terraform/kubeconfig.yaml
+
+# Python cache
+__pycache__/
+*.pyc

@@ -24,6 +24,7 @@
         module: copy
         content: "{{ k3s_token['content'] | b64decode | trim }}"
         dest: "./k3s_token.txt"
+      become: no
 
     - name: Lire le fichier de config kubeconfig
       slurp:
@@ -35,3 +36,4 @@
         module: copy
         content: "{{ kubeconfig_content['content'] | b64decode | replace('127.0.0.1', ansible_host) }}"
         dest: "./k3s_kubeconfig"
+      become: no

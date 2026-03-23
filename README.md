@@ -71,9 +71,8 @@ Localisation : `.github/workflows/devops-pipeline.yml`
    ansible-playbook -i hosts.ini monitoring-setup.yml
    ```
 3. **Accès Application** : `http://<IP_WORKER>:30001`
-4. **Accès Monitoring** : `http://<IP_MASTER>:30002` (Grafana)
+4. **Accès Monitoring** : `http://<IP_MASTER>:30002` 
 
----
 
 ## 5. Conclusion
 Le projet démontre une intégration fluide des outils DevOps pour assurer la scalabilité, la répétabilité et la visibilité de l'application déployée.

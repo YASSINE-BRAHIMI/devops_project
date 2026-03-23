@@ -35,10 +35,10 @@ jobs:
     if: github.ref == 'refs/heads/main'
     steps:
     - name: Checkout code
-      uses: actions/checkout@v3
+      uses: actions/checkout@v4
 
     - name: Set up kubectl
-      uses: azure/setup-kubectl@v3
+      uses: azure/setup-kubectl@v4
       with:
         version: 'latest'
 
@@ -51,4 +51,4 @@ jobs:
         export KUBECONFIG=kubeconfig.yaml
         kubectl apply -f k8s/deployment.yml --insecure-skip-tls-verify --validate=false
         kubectl apply -f k8s/service.yml --insecure-skip-tls-verify --validate=false
-        kubectl rollout restart deployment/flask-app --insecure-skip-tls-verify --validate=false
+        kubectl rollout restart deployment/flask-app --insecure-skip-tls-verify
