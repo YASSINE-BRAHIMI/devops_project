@@ -9,7 +9,7 @@
 ### 1. Introduction et Objectifs (Slide 1-2)
 - **Contexte** : Dans un monde où la vitesse de développement est cruciale, la livraison de code (Delivery) doit être fiabilisée et accélérée. 
 - **Objectif** : Mettre en place une chaîne d'intégration et de livraison continues (CI/CD) vers une infrastructure Cloud (AWS) 100% automatisée (Infrastructure as Code) hébergeant un cluster Kubernetes (K3s).
-- **Application cible** : Une application de gestion de bibliothèque basée sur Flask (Python).
+- **Application cible** : Une application Flask (Python) simplifiée en "Hello World" pour garantir une stabilité maximale du pipeline et faciliter la démonstration en direct.
 
 ### 2. Architecture et Choix Technologiques (Slide 3)
 *Rappel : Présentez le schéma Draw.io expliquant les interactions.*

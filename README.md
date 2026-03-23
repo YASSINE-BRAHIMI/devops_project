@@ -70,7 +70,7 @@ Localisation : `.github/workflows/devops-pipeline.yml`
    ansible-playbook -i hosts.ini k3s-worker.yml
    ansible-playbook -i hosts.ini monitoring-setup.yml
    ```
-3. **Accès Application** : `http://<IP_WORKER>:30001`
+3. **Accès App lication** : `http://<IP_WORKER>:30001`
 4. **Accès Monitoring** : `http://<IP_MASTER>:30002` 
 
 

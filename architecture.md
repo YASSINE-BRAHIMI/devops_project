@@ -19,7 +19,7 @@ This document describes the technical architecture of the DevOps project. You ca
 - **K3s Cluster**: Lightweight Kubernetes managing the application lifecycle.
 
 ## 3. Application Layer
-- **App**: Library Management System (Flask-based).
+- **App**: Hello World Flask App (simplified for stability).
 - **Container**: Docker image hosted on Docker Hub.
 - **Deployment**:
     - **Pods**: 2 replicas of the Flask container.
